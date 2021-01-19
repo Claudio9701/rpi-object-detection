@@ -17,6 +17,7 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from imageai.Detection import ObjectDetection
+from secrets import gmail_user, gmail_password
 
 # Model setup
 detector = ObjectDetection()
@@ -62,8 +63,7 @@ image = MIMEImage(img_data, name=os.path.basename(output_path))
 msg.attach(image)
 
 # Mail sending
-gmail_user = 'claudio.rtega2701@gmail.com'
-gmail_password = 'Ortega(97)'
+
 
 try:
     s = smtplib.SMTP_SSL('smtp.gmail.com', 465)
